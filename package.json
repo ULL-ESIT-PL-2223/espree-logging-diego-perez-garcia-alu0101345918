@@ -11,7 +11,8 @@
         "exec-out": "node bin/log.js -o ./bin/output.js",
         "test": "mocha test/test.mjs",
         "cov": "c8 npm test",
-        "doc": "jsdoc2md --files src/*.js > jsdoc/README.md"
+        "cov-docs": "c8 npm test -- --reporter=html --reporter=text --reports-dir docs",
+        "jsdoc2md": "jsdoc2md --files src/*.js > jsdoc/README.md"
     },
     "dependencies": {
         "commander": "^10.0.0",
