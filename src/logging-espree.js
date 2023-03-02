@@ -41,9 +41,9 @@ export function addLogging(code) {
   const ast = espree.parse(code, { ecmaVersion: 12, loc: true });
   estraverse.traverse(ast, {
     enter: function (node, parent) {
-      if (node.type === "FunctionDeclaration" || 
-          node.type === "ArrowFunctionExpression" ||
-          node.type === "FunctionExpression") {
+      if (node.type === "FunctionDeclaration" ||
+        node.type === "ArrowFunctionExpression" ||
+        node.type === "FunctionExpression") {
         addBeforeCode(node);
       }
     }
@@ -64,7 +64,8 @@ function addBeforeCode(node) {
     paramNames = "${" + node.params.map(p => p.name).join("}, ${") + "}";
   }
   const lineN = node.loc.start.line;
-  const beforeCode = "console.log(`Entering " + name + "(" + paramNames + ") at line " + lineN + "`);";
+  const beforeCode = "console.log(`Entering "
+    + name + "(" + paramNames + ") at line " + lineN + "`);";
   const beforeNode = espree.parse(beforeCode, { ecmaVersion: 12 }).body;
   node.body.body = beforeNode.concat(node.body.body);
 }
