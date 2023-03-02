@@ -1,0 +1,4 @@
+Entering persona (pepito,20,10) at line 1
+Entering <anonymous function>(20) at line 3
+Entering <anonymous function>(10) at line 4
+pepito 400 11

@@ -1,0 +1,2 @@
+Entering sumArray(1, 2, 3) at line 1
+6
