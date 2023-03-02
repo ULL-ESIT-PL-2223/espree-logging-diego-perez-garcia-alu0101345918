@@ -7,8 +7,11 @@
         "funlog": "bin/log.js"
     },
     "scripts": {
+        "exec": "node bin/log.js",
+        "exec-out": "node bin/log.js -o ./bin/output.js",
         "test": "mocha test/test.mjs",
-        "cov": "c8 npm test"
+        "cov": "c8 npm test",
+        "doc": "jsdoc2md --files src/*.js > jsdoc/README.md"
     },
     "dependencies": {
         "commander": "^10.0.0",
