@@ -11,7 +11,7 @@ program
   .version(version)
   .argument("<filename>", 'file with the original code')
   .option("-o, --output <filename>", "file in which to write the output")
-  .option("-e --exec", "execute the output program")
+  .option("-s --show", "show result in console")
   .action((filename, options) => {
     transpile(filename, options.output, options.exec);
   });
