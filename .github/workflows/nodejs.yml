@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix: # A job matrix can generate a maximum of 256 jobs per workflow run
         os: [ubuntu-latest, macos-latest]
-        node-version: [10.x, 12.x, 14.x, 16.x]
+        node-version: [16.x]
         architecture: [x64]
 
     name: Node ${{ matrix.node-version }} - ${{ matrix.architecture }} on ${{ matrix.os }} # The name of the job displayed in the workflow
